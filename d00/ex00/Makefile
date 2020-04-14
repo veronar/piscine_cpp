@@ -47,3 +47,6 @@ fclean: clean
 # Rule to re-make everything
 re: fclean all
 
+# Makes sure that gnu make will still run even if files called
+# clean / fclean / all and re already exist in the directory
+.PHONY: all clean fclean format re

@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cstring>
+#include "phonebook.hpp"
 using namespace std;
 
 int main(void)
@@ -15,6 +16,7 @@ int main(void)
 	else if (command.compare("ADD") == 0)
 	{
 		cout << "You want to add a contact\n";
+		add();
 		return (0);
 	}
 	else if (command.compare("SEARCH") == 0)

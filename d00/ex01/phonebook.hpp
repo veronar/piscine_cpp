@@ -47,6 +47,7 @@ private:
 	std::string _secret;
 };
 
-Contact	addEntry(void);
+Contact addEntry(void);
+void search(Contact contacts[], int num_of_contacts);
 
 #endif

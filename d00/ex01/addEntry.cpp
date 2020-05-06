@@ -48,11 +48,12 @@ Contact addEntry(void)
 	cin >> buffer;
 	newContact.setUnderwear(buffer);
 
-	cout << "Insert Darkest Secret: " << endl;
+	cout << "Insert Darkest Secret: ";
 	cin >> buffer;
 	newContact.setSecret(buffer);
 
-	cout << "Thank you. Entry Successfully added" << endl;
+	cout << endl
+		 << "Thank you. Entry Successfully added" << endl;
 
 	return (newContact);
 };

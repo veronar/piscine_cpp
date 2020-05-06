@@ -14,7 +14,7 @@
 NAME = phonebook
 
 # Sources & objects
-SRC = main.cpp Contact.class.cpp addEntry.cpp
+SRC = main.cpp Contact.class.cpp addEntry.cpp search.cpp
 OBJ = $(SRC:.cpp=.o)
 
 # Compilation flags

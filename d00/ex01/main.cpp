@@ -14,7 +14,7 @@ int main(void)
 		cin >> command;
 		if (command.compare("EXIT") == 0)
 		{
-			cout << "Have a great fucking day\n";
+			cout << "K Bye\n";
 			return (0);
 		}
 		else if (command.compare("ADD") == 0)
@@ -26,16 +26,19 @@ int main(void)
 				index++;
 				phonebook[index] = addEntry();
 			}
+			else
+			{
+				cout << "Phonebook full. You cannot add anymore contacts";
+			}
 		}
 		else if (command.compare("SEARCH") == 0)
 		{
 			cout << "Search from the below\n";
-			return (0);
+			search(phonebook, index);
 		}
 		else
 		{
-			cout << "You idiot, what kind of command is that??\nK Bye\n";
-			return (0);
+			cout << "What kind of command is that?\nTry Again\n";
 		}
 	}
 }

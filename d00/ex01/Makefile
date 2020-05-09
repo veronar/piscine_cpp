@@ -26,23 +26,23 @@ all: $(NAME)
 
 # Compile the program with objects
 $(NAME):	$(OBJ)
-					$(CXX) $(OBJ) -o $(NAME)
+			$(CXX) $(OBJ) -o $(NAME)
 
 # This won't run if the source files don't exist or are not modified
 # This creates the objects *i think
 # %.o: %.cpp
 $(OBJ):
-				$(CXX) $(FLAGS) -c $(SRC)
+		$(CXX) $(FLAGS) -c $(SRC)
 
 # Rule to remove all the object files
 clean:
-				@rm -f $(OBJ)
-				@echo "[INFO] Objects removed!"
+		@rm -f $(OBJ)
+		@echo "[INFO] Objects removed!"
 
 # Rule to remove everything that has been created by the makefile
 fclean: clean
-				@rm -f $(NAME)
-				@echo "[INFO] $(NAME) removed!"
+		@rm -f $(NAME)
+		@echo "[INFO] $(NAME) removed!"
 
 # Rule to re-make everything
 re: fclean all

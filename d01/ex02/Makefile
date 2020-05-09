@@ -14,7 +14,7 @@
 NAME = test_zombie
 
 # Sources & objects
-SRC = Zombie.cpp ZombieEvent.cpp
+SRC = Zombie.cpp ZombieEvent.cpp main.cpp
 OBJ = $(SRC:.cpp=.o)
 
 # Compilation flags

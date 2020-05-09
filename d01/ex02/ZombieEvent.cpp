@@ -19,17 +19,18 @@ void ZombieEvent::setZombieType(Zombie *zombie, string type)
 	return;
 }
 
-Zombie *newZombie(string name)
+Zombie *ZombieEvent::newZombie(string name)
 {
 	Zombie *newZombie = new Zombie(name);
 	return (newZombie);
 }
 
-Zombie *randomChump()
+Zombie *ZombieEvent::randomChump()
 {
-	string Rname = "randomName";
+	string names[] = {"crispy", "jerry", "saucy", "golden", "falcon", "hermione", "chips", "broccoli", "alex", "snow white"};
+	int index = rand() % 10;
 
-	Zombie *rando = newZombie(Rname);
+	Zombie *rando = newZombie(names[index]);
 	rando->announce();
 	return (rando);
 }

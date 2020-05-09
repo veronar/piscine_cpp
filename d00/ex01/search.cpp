@@ -23,12 +23,10 @@ string truncate(string str)
 
 void search(Contact contacts[], int num_of_contacts)
 {
-	int index;
 	string fName_field;
 	string lName_field;
-	string login_field;
+	string nick_field;
 
-	index = 0;
 	if (num_of_contacts < 1)
 	{
 		cout << "There are no contacts to display, shem." << endl;
@@ -37,14 +35,14 @@ void search(Contact contacts[], int num_of_contacts)
 
 	cout << setw(FIELD_WIDTH);
 	cout << "=============================================" << endl;
-	cout << "|  Index   |First Name|Last Name | Nickname |" << endl;
+	cout << "|     Index|First Name| Last Name|  Nickname|" << endl;
 	cout << "=============================================" << endl;
 
 	for (int i = 1; i <= num_of_contacts; i++)
 	{
 		fName_field = contacts[i].getFirstName();
 		lName_field = contacts[i].getLastName();
-		login_field = contacts[i].getLogin();
+		nick_field = contacts[i].getNickName();
 
 		cout << "|" << setw(FIELD_WIDTH) << i;
 		fName_field = truncate(fName_field);
@@ -53,40 +51,43 @@ void search(Contact contacts[], int num_of_contacts)
 		lName_field = truncate(lName_field);
 		cout << "|" << setw(FIELD_WIDTH) << lName_field;
 
-		login_field = truncate(login_field);
-		cout << "|" << setw(FIELD_WIDTH) << login_field;
+		nick_field = truncate(nick_field);
+		cout << "|" << setw(FIELD_WIDTH) << nick_field;
 
 		cout << "|" << endl;
 	}
 	cout << "=============================================" << endl;
-	cout << "Enter the index number of the contact you would like to see: ";
-	cin >> index;
-	findContact(contacts, num_of_contacts, index);
-	return;
+	findContact(contacts, num_of_contacts);
 }
 
-void findContact(Contact contacts[], int num_of_contacts, int index)
+void findContact(Contact contacts[], int num_of_contacts)
 {
-	if (index < 1 || index > num_of_contacts)
+	int index;
+
+	cout << "Enter the index number of the contact you would like to see: ";
+	cin >> index;
+	cout << endl;
+
+	if (cin.good() && (index > 0 && index <= num_of_contacts))
 	{
-		cout << "Obviously that is not valid. Want to try again?" << endl;
-		search(contacts, num_of_contacts);
+		cout << "=============================================>>" << endl;
+		cout << "First Name: " << contacts[index].getFirstName() << endl;
+		cout << "Last Name: " << contacts[index].getLastName() << endl;
+		cout << "Nick Name: " << contacts[index].getNickName() << endl;
+		cout << "Login: " << contacts[index].getLogin() << endl;
+		cout << "Postal Address: " << contacts[index].getPostalAddress() << endl;
+		cout << "Email Address: " << contacts[index].getEmailAddress() << endl;
+		cout << "Phone Number: " << contacts[index].getPhoneNumber() << endl;
+		cout << "Birthday: " << contacts[index].getDOB() << endl;
+		cout << "Favourite Meal: " << contacts[index].getFavMeal() << endl;
+		cout << "Underwear Colour: " << contacts[index].getUnderwear() << endl;
+		cout << "Darkest Secret: " << contacts[index].getSecret() << endl;
+		cout << "=============================================>>" << endl;
 	}
 	else
 	{
-		cout << "=============================================>>" << endl;
-		cout << contacts[index].getFirstName() << "| ";
-		cout << contacts[index].getLastName() << " | ";
-		cout << contacts[index].getNickName() << " | ";
-		cout << contacts[index].getLogin() << " | ";
-		cout << contacts[index].getPostalAddress() << " | ";
-		cout << contacts[index].getEmailAddress() << " | ";
-		cout << contacts[index].getPhoneNumber() << " | ";
-		cout << contacts[index].getDOB() << " | ";
-		cout << contacts[index].getFavMeal() << " | ";
-		cout << contacts[index].getUnderwear() << " | ";
-		cout << contacts[index].getSecret() << " |" << endl;
-		cout << "=============================================>>" << endl;
+		cin.clear();
+		cout << "That entry could not be found. Want to try again?" << endl;
+		// search(contacts, num_of_contacts);
 	}
-	return;
 }

@@ -16,6 +16,7 @@
 #include <iostream>
 #include <string>
 #include <iomanip>
+using namespace std;
 
 const int MAX_CONTACTS = 8;
 const int FIELD_WIDTH = 10;
@@ -62,7 +63,7 @@ private:
 
 Contact addEntry(void);
 void search(Contact contacts[], int num_of_contacts);
-void findContact(Contact contacts[], int num_of_contacts, int index);
+void findContact(Contact contacts[], int num_of_contacts);
 string truncate(string str);
 
 #endif

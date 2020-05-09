@@ -22,7 +22,7 @@ int main(void)
 	index = 0;
 	while (1)
 	{
-		cout << "What do you want? ";
+		cout << "Enter a command: ";
 		getline(cin, command, '\n');
 		if (command.compare("EXIT") == 0)
 		{
@@ -50,7 +50,7 @@ int main(void)
 		}
 		else
 		{
-			cout << "\nWhat kind of command is that?\nTry Again\n";
+			cout << "\nTry Again\n";
 		}
 	}
 	return (0);

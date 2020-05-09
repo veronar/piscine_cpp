@@ -15,8 +15,9 @@
 int main()
 {
 	ZombieEvent base;
+	Zombie *test;
 
-	Zombie *test = base.randomChump();
+	test = base.randomChump();
 
 	Zombie *test1 = base.newZombie("mary's little lamb");
 	test1->setType("sheep");

@@ -29,7 +29,8 @@ void search(Contact contacts[], int num_of_contacts)
 
 	if (num_of_contacts < 1)
 	{
-		cout << "There are no contacts to display, shem." << endl;
+		cout << "There are no contacts to display, shem.\n"
+			 << endl;
 		return;
 	}
 
@@ -88,6 +89,6 @@ void findContact(Contact contacts[], int num_of_contacts)
 	{
 		cin.clear();
 		cout << "That entry could not be found. Want to try again?" << endl;
-		// search(contacts, num_of_contacts);
+		search(contacts, num_of_contacts);
 	}
 }

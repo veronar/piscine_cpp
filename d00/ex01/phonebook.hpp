@@ -1,11 +1,24 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   phonebook.hpp                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: vesingh <vesingh@student.wethinkcode.co    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/05/09 11:36:24 by vesingh           #+#    #+#             */
+/*   Updated: 2020/05/09 11:36:24 by vesingh          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #ifndef PHONEBOOK_HPP
 #define PHONEBOOK_HPP
 
 #include <iostream>
-#include <cstring>
+#include <string>
+#include <iomanip>
 
 const int MAX_CONTACTS = 8;
+const int FIELD_WIDTH = 10;
 
 class Contact
 {
@@ -49,5 +62,6 @@ private:
 
 Contact addEntry(void);
 void search(Contact contacts[], int num_of_contacts);
+void findContact(Contact contacts[], int num_of_contacts, int index);
 
 #endif

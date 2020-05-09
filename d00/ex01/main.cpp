@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: vesingh <vesingh@student.wethinkcode.co    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/05/09 10:54:16 by vesingh           #+#    #+#             */
+/*   Updated: 2020/05/09 10:54:16 by vesingh          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "phonebook.hpp"
 using namespace std;
 
@@ -11,7 +23,7 @@ int main(void)
 	while (1)
 	{
 		cout << "What do you want? ";
-		cin >> command;
+		getline(cin, command, '\n');
 		if (command.compare("EXIT") == 0)
 		{
 			cout << "K Bye\n";
@@ -41,4 +53,5 @@ int main(void)
 			cout << "What kind of command is that?\nTry Again\n";
 		}
 	}
+	return (0);
 }

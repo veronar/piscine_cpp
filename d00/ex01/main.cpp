@@ -50,7 +50,7 @@ int main(void)
 		}
 		else
 		{
-			cout << "What kind of command is that?\nTry Again\n";
+			cout << "\nWhat kind of command is that?\nTry Again\n";
 		}
 	}
 	return (0);

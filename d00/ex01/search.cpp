@@ -13,8 +13,12 @@
 #include "phonebook.hpp"
 using namespace std;
 
-string	truncString(string str) {
-	str = str.erase((FIELD_WIDTH - 1), str.length() - (FIELD_WIDTH - 1));
+string truncate(string str)
+{
+	if (str.length() > FIELD_WIDTH)
+		return str.substr(0, (FIELD_WIDTH - 1)) + ".";
+	else
+		return str;
 }
 
 void search(Contact contacts[], int num_of_contacts)
@@ -43,11 +47,16 @@ void search(Contact contacts[], int num_of_contacts)
 		login_field = contacts[i].getLogin();
 
 		cout << "|" << setw(FIELD_WIDTH) << i;
-		fName_field = (fName_field.length() > FIELD_WIDTH) ? truncString(fName_field) : fName_field;
-		cout << contacts[i].getFirstName() << " ";
-		cout << contacts[i].getLastName() << " ";
-		cout << contacts[i].getNickName() << " ";
-		cout << contacts[i].getLogin() << endl;
+		fName_field = truncate(fName_field);
+		cout << "|" << setw(FIELD_WIDTH) << fName_field;
+
+		lName_field = truncate(lName_field);
+		cout << "|" << setw(FIELD_WIDTH) << lName_field;
+
+		login_field = truncate(login_field);
+		cout << "|" << setw(FIELD_WIDTH) << login_field;
+
+		cout << "|" << endl;
 	}
 	cout << "=============================================" << endl;
 	cout << "Enter the index number of the contact you would like to see: ";
@@ -65,17 +74,19 @@ void findContact(Contact contacts[], int num_of_contacts, int index)
 	}
 	else
 	{
-		cout << contacts[index].getFirstName() << " ";
-		cout << contacts[index].getLastName() << " ";
-		cout << contacts[index].getNickName() << " ";
-		cout << contacts[index].getLogin() << " ";
-		cout << contacts[index].getPostalAddress() << " ";
-		cout << contacts[index].getEmailAddress() << " ";
-		cout << contacts[index].getPhoneNumber() << " ";
-		cout << contacts[index].getDOB() << " ";
-		cout << contacts[index].getFavMeal() << " ";
-		cout << contacts[index].getUnderwear() << " ";
-		cout << contacts[index].getSecret() << endl;
+		cout << "=============================================>>" << endl;
+		cout << contacts[index].getFirstName() << "| ";
+		cout << contacts[index].getLastName() << " | ";
+		cout << contacts[index].getNickName() << " | ";
+		cout << contacts[index].getLogin() << " | ";
+		cout << contacts[index].getPostalAddress() << " | ";
+		cout << contacts[index].getEmailAddress() << " | ";
+		cout << contacts[index].getPhoneNumber() << " | ";
+		cout << contacts[index].getDOB() << " | ";
+		cout << contacts[index].getFavMeal() << " | ";
+		cout << contacts[index].getUnderwear() << " | ";
+		cout << contacts[index].getSecret() << " |" << endl;
+		cout << "=============================================>>" << endl;
 	}
 	return;
 }

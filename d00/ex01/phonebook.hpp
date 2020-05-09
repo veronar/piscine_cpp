@@ -63,5 +63,6 @@ private:
 Contact addEntry(void);
 void search(Contact contacts[], int num_of_contacts);
 void findContact(Contact contacts[], int num_of_contacts, int index);
+string truncate(string str);
 
 #endif

@@ -23,7 +23,7 @@ void Weapon::setType(string str)
 	return;
 }
 
-string Weapon::getType()
+string& Weapon::getType()
 {
 	return this->_type;
 }

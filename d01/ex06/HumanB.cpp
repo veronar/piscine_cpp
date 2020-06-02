@@ -15,16 +15,15 @@
 HumanB::HumanB(string str)
 {
 	this->_name = str;
-	this->_weapon.setType("unknown");
 }
 
 void HumanB::attack()
 {
-	cout << this->_name << " attacks with his " << this->_weapon.getType();
+	cout << this->_name << " attacks with his " << this->_weapon->getType();
 	cout << endl;
 }
 
-void HumanB::setWeapon(Weapon weapon)
+void HumanB::setWeapon(Weapon& weapon)
 {
-	this->_weapon = weapon;
+	this->_weapon = &weapon;
 }

@@ -18,12 +18,12 @@
 class HumanA
 {
 public:
-	HumanA(string str, Weapon weapon);
+	HumanA(string str, Weapon& weapon);
 	void attack();
 
 private:
 	string _name;
-	Weapon _weapon;
+	Weapon& _weapon;
 };
 
 #endif

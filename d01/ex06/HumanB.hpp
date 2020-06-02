@@ -20,11 +20,11 @@ class HumanB
 public:
 	HumanB(string str);
 	void attack();
-	void	setWeapon(Weapon weapon);
+	void	setWeapon(Weapon &weapon);
 
 private:
 	string _name;
-	Weapon _weapon;
+	Weapon *_weapon;
 };
 
 #endif

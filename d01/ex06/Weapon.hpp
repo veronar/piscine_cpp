@@ -22,7 +22,7 @@ class Weapon
 public:
 	Weapon(string str);
 	void setType(string str);
-	string getType();
+	string &getType();
 
 private:
 	string _type;

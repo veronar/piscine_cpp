@@ -12,9 +12,9 @@
 
 #include "HumanA.hpp"
 
-HumanA::HumanA(string str, Weapon weapon){
+HumanA::HumanA(string str, Weapon& weapon): _weapon(weapon){
 	this->_name = str;
-	this->_weapon = weapon;
+	// this->_weapon = &weapon;
 }
 
 void HumanA::attack()
